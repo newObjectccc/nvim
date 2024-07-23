@@ -176,6 +176,7 @@ return {
   -- or you can return new options to override all the defaults
   {
     "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     opts = function()
       return {
@@ -199,6 +200,20 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+      },
+    },
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = true },
+      panel = { enabled = true },
+      filetypes = {
+        markdown = true,
+        help = true,
       },
     },
   },
