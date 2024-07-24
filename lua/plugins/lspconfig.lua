@@ -75,7 +75,7 @@ return -- add tsserver and setup with typescript.nvim instead of lspconfig
           },
         })
       end,
-      filtypes = {
+      filetypes = {
         "javascript",
         "javascriptreact",
         "typescript",
