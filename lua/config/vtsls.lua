@@ -10,7 +10,7 @@ return {
         "typescript.tsx",
         "vue",
       },
-      autoUseWorkspaceTsdk = true,
+      -- autoUseWorkspaceTsdk = true,
     })
   end,
 }
