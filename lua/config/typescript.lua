@@ -18,7 +18,7 @@ return {
         plugins = {
           {
             name = "@vue/typescript-plugin",
-            location = vue_language_server_plugin,
+            -- location = vue_language_server_plugin,
             languages = { "vue" },
           },
         },
