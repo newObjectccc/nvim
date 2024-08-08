@@ -18,7 +18,7 @@ require("nvim-ts-autotag").setup({
 })
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h12" -- text below applies for VimScript
+  vim.o.guifont = "JetBrainsMono Nerd Font:h13" -- text below applies for VimScript
   vim.g.neovide_transparency = 0.64
   vim.g.neovide_window_blurred = true
   vim.g.neovide_cursor_vfx_mode = "railgun"
