@@ -21,7 +21,7 @@ return {
       backends = { "lsp", "treesitter", "markdown", "man" },
       show_guides = true,
       layout = {
-        max_width = { 100, 0.35 },
+        max_width = { 100, 0.4 },
         resize_to_content = false,
         win_opts = {
           winhl = "Normal:NormalFloat,FloatBorder:NormalFloat,SignColumn:SignColumnSB",
