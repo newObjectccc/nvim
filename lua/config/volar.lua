@@ -5,7 +5,7 @@ return {
       filetypes = { "vue" },
       init_options = {
         vue = {
-          hybridMode = false,
+          hybridMode = true,
         },
         documentFeatures = {
           documentColor = false,
