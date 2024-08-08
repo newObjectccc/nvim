@@ -8,7 +8,9 @@ return {
         "typescript",
         "typescriptreact",
         "typescript.tsx",
+        "vue",
       },
+      autoUseWorkspaceTsdk = true,
     })
   end,
 }

@@ -1,9 +1,12 @@
 return {
-  setup = function(opts)
+  setup = function()
     require("lspconfig").volar.setup({
       cmd = { "vue-language-server", "--stdio" },
       filetypes = { "vue" },
       init_options = {
+        vue = {
+          hybridMode = false,
+        },
         documentFeatures = {
           documentColor = false,
           documentFormatting = {
@@ -36,15 +39,9 @@ return {
           signatureHelp = true,
           typeDefinition = true,
         },
-        typescript = {
-          serverPath = "",
-        },
       },
       on_new_config = function()
         -- uses nvim-lspconfig/lua/lspconfig/server_configurations/volar.lua:62
-      end,
-      root_dir = function()
-        -- uses nvim-lspconfig/lua/lspconfig/util.lua:343
       end,
     })
   end,
