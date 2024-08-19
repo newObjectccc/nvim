@@ -18,7 +18,6 @@ return {
       vtsls = {},
       volar = {},
       tsserver = {},
-      somesass_ls = {},
     },
     -- you can do any additional lsp server setup here
     -- return true if you don't want this server to be setup with lspconfig
@@ -29,10 +28,10 @@ return {
       --   return true
       -- end,
       -- -- example to setup with typescript.nvim
-      -- tsserver = function(_, opts)
-      --   require("config.typescript").setup({ server = opts })
-      --   return true
-      -- end,
+      tsserver = function(_, opts)
+        require("config.typescript").setup({ server = opts })
+        return true
+      end,
 
       -- vtsls = function(_, opts)
       --   require("config.vtsls").setup({ server = opts })
