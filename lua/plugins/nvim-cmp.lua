@@ -6,6 +6,14 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    {
+      "garymjr/nvim-snippets",
+      opts = {
+        friendly_snippets = true,
+        create_cmp_source = true,
+      },
+      dependencies = { "rafamadriz/friendly-snippets" },
+    },
   },
   -- Not all LSP servers add brackets when completing a function.
   -- To better deal with this, LazyVim adds a custom option to cmp,
@@ -16,7 +24,7 @@ return {
   --   auto_brackets = { "python" }
   -- }
   -- ```
-  opts = function()
+  opts = function(_, opts)
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
@@ -27,6 +35,14 @@ return {
       end
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
       return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
+    end
+    opts.snippet = {
+      expand = function(item)
+        return LazyVim.cmp.expand(item.body)
+      end,
+    }
+    if LazyVim.has("nvim-snippets") then
+      table.insert(opts.sources, { name = "snippets" })
     end
     return {
       auto_brackets = {}, -- configure any filetype to auto add brackets
@@ -50,6 +66,7 @@ return {
         -- Copilot Source
         { name = "copilot" },
         { name = "nvim_lsp" },
+        { name = "snippets" },
         { name = "path" },
       }, {
         { name = "buffer" },
