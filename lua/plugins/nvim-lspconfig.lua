@@ -15,23 +15,18 @@ return {
     ---@type lspconfig.options
     servers = {
       -- tsserver will be automatically installed with mason and loaded with lspconfig
-      vtsls = {},
-      volar = {},
-      tsserver = {},
+      -- vtsls = {},
+      -- tsserver = {},
     },
     -- you can do any additional lsp server setup here
     -- return true if you don't want this server to be setup with lspconfig
     ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
     setup = {
-      -- volar = function(_, opts)
-      --   require("config.volar").setup({ server = opts })
+      -- -- example to setup with typescript.nvim
+      -- tsserver = function(_, opts)
+      --   require("config.typescript").setup({ server = opts })
       --   return true
       -- end,
-      -- -- example to setup with typescript.nvim
-      tsserver = function(_, opts)
-        require("config.typescript").setup({ server = opts })
-        return true
-      end,
 
       -- vtsls = function(_, opts)
       --   require("config.vtsls").setup({ server = opts })
@@ -44,7 +39,10 @@ return {
       -- end,
 
       -- Specify * to use this function as a fallback for any server
-      -- ["*"] = function(server, opts) end,
+      -- ["*"] = function(server, opts)
+      --   require("config." .. server).setup({ server = opts })
+      --   return true
+      -- end,
     },
   },
 }
