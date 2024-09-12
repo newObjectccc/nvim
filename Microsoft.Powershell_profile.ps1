@@ -1,3 +1,5 @@
+netsh winhttp set proxy proxy-server="http=http://127.0.0.1:7890;https=https://127.0.0.1:7890" bypass-list="localhost,127.0.0.1"
+
 oh-my-posh init powershell --config "~/copytheme.omp.json" | Invoke-Expression
 Import-Module PSReadLine
 Import-Module syntax-highlighting
