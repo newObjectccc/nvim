@@ -42,7 +42,7 @@ return {
       vim.g.everforest_enable_italic = 1
       vim.g.everforest_background = "hard"
       vim.g.everforest_enable_italic = true
-      vim.g.everforest_transparent_background = false
+      vim.g.everforest_transparent_background = true
       vim.cmd.colorscheme("everforest")
     end,
   },
