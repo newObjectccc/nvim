@@ -2,16 +2,21 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+config.default_prog = { "powershell" }
+
 -- theme
 -- config.color_scheme = "Everforest Dark Hard (Gogh)"
 
 -- text
-config.font = wezterm.font("JetBrains Mono")
-config.font_size = 10
+config.font = wezterm.font({
+  family = "JetBrains Mono",
+  weight = "Bold",
+})
+config.font_size = 11
 
 -- gui
-config.window_decorations = "NONE"
--- config.window_background_opacity = 0.9
+config.window_decorations = "RESIZE"
+config.window_background_opacity = 0.9
 config.window_padding = {
   left = 0,
   right = 0,
@@ -22,7 +27,7 @@ config.window_padding = {
 -- key rebinding
 config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
-  { key = "w", mods = "SHIFT|ALT", action = act({ CloseCurrentPane = { confirm = false } }) },
+  { key = "w", mods = "SHIFT|ALT|CTRL", action = act({ CloseCurrentPane = { confirm = false } }) },
   { key = "s", mods = "LEADER", action = act.PaneSelect },
   {
     key = "s",
@@ -33,6 +38,11 @@ config.keys = {
     key = "v",
     mods = "CTRL|SHIFT|ALT",
     action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "w",
+    mods = "LEADER",
+    action = act({ CloseCurrentPane = { confirm = false } }),
   },
   {
     key = "H",
@@ -61,7 +71,7 @@ config.color_scheme = "Catppuccin Mocha"
 -- then finally apply the plugin
 -- these are currently the defaults:
 wezterm.plugin.require("https://github.com/nekowinston/wezterm-bar").apply_to_config(config, {
-  position = "top",
+  position = "bottom",
   max_width = 32,
   dividers = "arrows", -- or "slant_left", "arrows", "rounded", false
   indicator = {
