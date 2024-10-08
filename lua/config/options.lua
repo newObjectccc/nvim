@@ -5,3 +5,4 @@ local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
 opt.expandtab = false
+opt.shell = "powershell"
