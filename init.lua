@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("avante_lib").load()
 require("nvim-ts-autotag").setup({
   opts = {
     -- Defaults
@@ -19,11 +20,12 @@ require("nvim-ts-autotag").setup({
 
 -- if neovide
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h11" -- text below applies for VimScript
+  -- vim.o.guifont = "JetBrainsMonoNL Nerd Font Propo:h11" -- text below applies for VimScript
+  vim.o.guifont = "CaskaydiaMono Nerd Font:h13" -- text below applies for VimScript
   vim.g.neovide_transparency = 0.8
   -- vim.g.neovide_window_blurred = true
   -- vim.g.neovide_fullscreen = true
-  vim.g.neovide_theme = "dark"
+  vim.g.neovide_theme = "auto"
   vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_padding_top = 0
   vim.g.neovide_padding_bottom = 0
