@@ -6,4 +6,4 @@ local opt = vim.opt
 opt.laststatus = 3
 opt.clipboard = "unnamedplus"
 opt.expandtab = false
-opt.shell = "powershell"
+-- opt.shell = "powershell"
