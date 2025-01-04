@@ -28,10 +28,15 @@ return {
       --   return true
       -- end,
 
-      -- vtsls = function(_, opts)
-      --   require("config.vtsls").setup({ server = opts })
-      --   return true
-      -- end,
+      vtsls = function(_, opts)
+        require("config.vtsls").setup({ server = opts })
+        return true
+      end,
+
+      denols = function(_, opts)
+        require("config.denols").setup({ server = opts })
+        return true
+      end,
 
       -- somesass_ls = function(_, opts)
       --   require("config.somesass_ls").setup({ server = opts })
