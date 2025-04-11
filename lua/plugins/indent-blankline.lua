@@ -2,7 +2,7 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   event = "LazyFile",
   opts = function()
-    LazyVim.toggle.map("<leader>ug", {
+    Snacks.toggle("<leader>ug", {
       name = "Indention Guides",
       get = function()
         return require("ibl.config").get_config(0).enabled
