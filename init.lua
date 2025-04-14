@@ -22,7 +22,7 @@ require("nvim-ts-autotag").setup({
 if vim.g.neovide then
   -- vim.o.guifont = "JetBrainsMonoNL Nerd Font Propo:h11" -- text below applies for VimScript
   vim.o.guifont = "Maple Mono NF CN:h14" -- text below applies for VimScript
-  vim.g.neovide_opacity = 0.7
+  vim.g.neovide_opacity = 0.9
   -- vim.g.neovide_window_blurred = true
   -- vim.g.neovide_fullscreen = true
   vim.g.neovide_theme = "auto"

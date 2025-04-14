@@ -5,15 +5,29 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = "copilot",
+    -- cursor_applying_provider = "copilot",
     copilot = {
       model = "claude-3.7-sonnet", -- "claude-3.7-sonnet",
-      max_token = 200000, -- 设置为最大值 200K tokens
+      max_tokens = 200000, -- 设置为最大值 200K tokens
     },
     auto_suggestions_provider = "copilot", -- Set the auto suggestions provider
     behaviour = {
       auto_suggestions = true, -- Enable auto suggestions
+      -- enable_cursor_planning_mode = true, -- enable cursor planning mode!
       -- other behaviour settings
+      --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
     },
+    -- vendors = {
+    --   --- ... existing vendors
+    --   groq = { -- define groq provider
+    --     __inherited_from = "copilot",
+    --     api_key = "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",
+    --     api_key_name = "GROQ_API_KEY",
+    --     endpoint = "https://api.groq.com/openai/v1/",
+    --     model = "llama-3.3-70b-versatile",
+    --     max_completion_tokens = 200000, -- 32768, -- remember to increase this value, otherwise it will stop generating halfway
+    --   },
+    -- },
     history = {
       max_tokens = 200000, -- Set the maximum number of tokens
       -- other history settings
