@@ -7,7 +7,8 @@ return {
     provider = "copilot",
     -- cursor_applying_provider = "copilot",
     copilot = {
-      model = "claude-3.7-sonnet", -- "claude-3.7-sonnet",
+      model = "gemini-2.5-pro", -- "claude-3.7-sonnet",
+      -- model = "claude-3.7-sonnet", -- "claude-3.7-sonnet",
       max_tokens = 200000, -- 设置为最大值 200K tokens
     },
     auto_suggestions_provider = "copilot", -- Set the auto suggestions provider
